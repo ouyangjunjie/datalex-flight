@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .plain-button {
+    appearance: none;
+    background: transparent;
+    border: 0 solid;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+@tailwind utilities;
+
+:root {
+  --el-color-primary: #c7000b;
+  --el-color-primary-light-3: #d74b52;
+  --el-color-primary-light-5: #e38085;
+  --el-color-primary-light-7: #efb3b6;
+  --el-color-primary-light-9: #faebec;
+  --el-color-primary-dark-2: #a50009;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background-color: #f5f7fa;
+  color: #303133;
+}
