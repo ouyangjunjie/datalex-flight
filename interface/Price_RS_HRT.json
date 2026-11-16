@@ -1,0 +1,1869 @@
+{
+  "userSessionId": "6afa98b9b8b86c78ea67e0df",
+  "pos": "AIRCHINA_CN",
+  "languageCode": "en",
+  "clientToken": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1MzYxMjUyLjE3OTQ4MDc5OTM1NzEiLCJpYXQiOjE3OTQ4MDg1MjEsImV4cCI6MTc5NDgwOTQyMX0.rAfut-esGKpWATfoVHpHpcgibQtDaejE2rL7TjcA_nQ",
+  "preferredCurrency": "CNY",
+  "expiration": {
+    "date": "2026-11-16T06:20:02Z",
+    "duration": "PT24M40.813S"
+  },
+  "error": [],
+  "warning": [],
+  "validationResult": {
+    "status": "ALLOW_ORIGINAL_OFFER",
+    "offerStatus": [
+      {
+        "status": "ALLOW_ORIGINAL_OFFER",
+        "originalOfferRef": {
+          "uri": "/air/search/6afa9a20b8b86c78ea67e0e2/itinerary-prices/1_1",
+          "id": "1_1"
+        },
+        "originalOffer": {
+          "itineraryPriceRef": [
+            {
+              "uri": "/air/search/6afa9a20b8b86c78ea67e0e2/itinerary-prices/1_1",
+              "id": "1_1"
+            }
+          ]
+        },
+        "warningRef": []
+      }
+    ]
+  },
+  "totalPrice": {
+    "money": {
+      "amount": 11363,
+      "currency": "CNY"
+    },
+    "redemption": []
+  },
+  "offer": [
+    {
+      "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4",
+      "id": "6afa9ac9b8b86c78ea67e0e4",
+      "trackingId": "d405fbdd-2c74-4c9b-ba8e-817220403748_1794808352425",
+      "domain": "AIR",
+      "price": {
+        "baseFare": {
+          "money": {
+            "amount": 7310,
+            "currency": "CNY"
+          }
+        },
+        "totalFare": {
+          "money": {
+            "amount": 11363,
+            "currency": "CNY"
+          }
+        },
+        "tax": [
+          {
+            "code": "DE",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 81,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Airport Security Charge (International)"
+              }
+            ]
+          },
+          {
+            "code": "OY",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 439,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "AIR TRANSPORT TAX (international)"
+              }
+            ]
+          },
+          {
+            "code": "CN",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 90,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Airport Fee (International)"
+              }
+            ]
+          },
+          {
+            "code": "RA",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 338,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Frankfurt Passenger Service Charge - Intl."
+              }
+            ]
+          }
+        ],
+        "fee": [
+          {
+            "code": "Q",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 200,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Q Surcharges"
+              }
+            ]
+          },
+          {
+            "code": "YQ",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 2905,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Fuel Surcharge"
+              }
+            ]
+          }
+        ],
+        "promotion": [],
+        "adjustment": [],
+        "payNowValue": {
+          "money": {
+            "amount": 11363,
+            "currency": "CNY"
+          }
+        }
+      },
+      "air": {
+        "itinerary": {
+          "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1",
+          "id": "1",
+          "duration": "PT19H35M",
+          "originDestination": [
+            {
+              "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/origins-destinations/1",
+              "id": "1",
+              "duration": "PT9H15M",
+              "arrivalOffset": 1,
+              "flightSegment": [
+                {
+                  "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_932_2026-11-25_FRA_PEK",
+                  "id": "CA_932_2026-11-25_FRA_PEK",
+                  "flightNumber": "932",
+                  "stopQuantity": 0,
+                  "duration": "PT9H15M",
+                  "mealService": false,
+                  "departure": {
+                    "date": "2026-11-25T20:00:00",
+                    "terminal": "1",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/FRA",
+                      "id": "A:FRA"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2026-11-26T12:15:00",
+                    "terminal": "T3",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/PEK",
+                      "id": "A:PEK"
+                    }
+                  },
+                  "marketingAirlineRef": {
+                    "uri": "/info/air/airlines/CA",
+                    "id": "CA"
+                  },
+                  "aircraft": {
+                    "code": "773",
+                    "name": "773",
+                    "changeOfGauge": false
+                  },
+                  "bookingClassAvailability": [
+                    {
+                      "bookingClass": "Q",
+                      "cabinClass": "Y",
+                      "inventoryStatus": "Available"
+                    }
+                  ],
+                  "amenityRef": [],
+                  "comment": [],
+                  "flightLeg": [],
+                  "specialService": []
+                }
+              ],
+              "notes": [],
+              "vendorAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              }
+            },
+            {
+              "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/origins-destinations/2",
+              "id": "2",
+              "duration": "PT10H20M",
+              "arrivalOffset": 0,
+              "flightSegment": [
+                {
+                  "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_957_2026-11-28_PKX_FRA",
+                  "id": "CA_957_2026-11-28_PKX_FRA",
+                  "flightNumber": "957",
+                  "stopQuantity": 0,
+                  "duration": "PT10H20M",
+                  "mealService": false,
+                  "departure": {
+                    "date": "2026-11-28T14:30:00",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/PKX",
+                      "id": "A:PKX"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2026-11-28T17:50:00",
+                    "terminal": "1",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/FRA",
+                      "id": "A:FRA"
+                    }
+                  },
+                  "marketingAirlineRef": {
+                    "uri": "/info/air/airlines/CA",
+                    "id": "CA"
+                  },
+                  "aircraft": {
+                    "code": "773",
+                    "name": "773",
+                    "changeOfGauge": false
+                  },
+                  "bookingClassAvailability": [
+                    {
+                      "bookingClass": "Q",
+                      "cabinClass": "Y",
+                      "inventoryStatus": "Available"
+                    }
+                  ],
+                  "amenityRef": [],
+                  "comment": [],
+                  "flightLeg": [],
+                  "specialService": []
+                }
+              ],
+              "notes": [],
+              "vendorAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              }
+            }
+          ]
+        },
+        "itineraryPrice": {
+          "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1",
+          "id": "1",
+          "totalPrice": {
+            "baseFare": {
+              "money": {
+                "amount": 7310,
+                "currency": "CNY"
+              }
+            },
+            "totalFare": {
+              "money": {
+                "amount": 11363,
+                "currency": "CNY"
+              }
+            },
+            "tax": [
+              {
+                "code": "DE",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 81,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Airport Security Charge (International)"
+                  }
+                ]
+              },
+              {
+                "code": "OY",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 439,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "AIR TRANSPORT TAX (international)"
+                  }
+                ]
+              },
+              {
+                "code": "CN",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 90,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Airport Fee (International)"
+                  }
+                ]
+              },
+              {
+                "code": "RA",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 338,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Frankfurt Passenger Service Charge - Intl."
+                  }
+                ]
+              }
+            ],
+            "fee": [
+              {
+                "code": "Q",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 200,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Q Surcharges"
+                  }
+                ]
+              },
+              {
+                "code": "YQ",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 2905,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Fuel Surcharge"
+                  }
+                ]
+              }
+            ],
+            "promotion": [],
+            "adjustment": []
+          },
+          "travelerPrice": [
+            {
+              "travelerQuantity": 1,
+              "linearFareConstruction": "25NOV26FRA F-1PC CA BJS Q29.82 555.09QLNCCDE/NW F-1PC CA FRA 555.09QLNCCDE/NW NUC1140.00END ROE0.891192 XT CNY 439.00OY 338.00RA 90.00CN",
+              "baseFare": {
+                "money": {
+                  "amount": 7310,
+                  "currency": "CNY"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 11363,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [
+                {
+                  "code": "DE",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 81,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Security Charge (International)"
+                    }
+                  ]
+                },
+                {
+                  "code": "OY",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 439,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "AIR TRANSPORT TAX (international)"
+                    }
+                  ]
+                },
+                {
+                  "code": "RA",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 338,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Frankfurt Passenger Service Charge - Intl."
+                    }
+                  ]
+                },
+                {
+                  "code": "CN",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 90,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Fee (International)"
+                    }
+                  ]
+                }
+              ],
+              "fee": [
+                {
+                  "code": "Q",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 200,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Q Surcharges"
+                    }
+                  ]
+                },
+                {
+                  "code": "YQ",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 2905,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "travelerTypeRef": {
+                "uri": "/info/traveler-types/AIR/ADT",
+                "id": "ADT"
+              },
+              "fareAssociation": [
+                {
+                  "fareBasisCode": "QLNCCDE/NW",
+                  "farePriceRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/1",
+                    "id": "1"
+                  }
+                },
+                {
+                  "fareBasisCode": "QLNCCDE/NW",
+                  "farePriceRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/2",
+                    "id": "2"
+                  }
+                }
+              ],
+              "integralFareInfo": []
+            }
+          ],
+          "originDestinationPrice": [
+            {
+              "originDestinationRef": {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/origins-destinations/1"
+              },
+              "totalPrice": {
+                "baseFare": {
+                  "money": {
+                    "amount": 3654,
+                    "currency": "CNY"
+                  }
+                },
+                "totalFare": {
+                  "money": {
+                    "amount": 6220,
+                    "currency": "CNY"
+                  }
+                },
+                "tax": [
+                  {
+                    "code": "DE",
+                    "included": false,
+                    "value": {
+                      "money": {
+                        "amount": 81,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Airport Security Charge (International)"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "OY",
+                    "included": false,
+                    "value": {
+                      "money": {
+                        "amount": 439,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "AIR TRANSPORT TAX (international)"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "RA",
+                    "included": false,
+                    "value": {
+                      "money": {
+                        "amount": 338,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Frankfurt Passenger Service Charge - Intl."
+                      }
+                    ]
+                  }
+                ],
+                "fee": [
+                  {
+                    "code": "YQ",
+                    "value": {
+                      "money": {
+                        "amount": 1508,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Fuel Surcharge"
+                      }
+                    ]
+                  }
+                ],
+                "promotion": [],
+                "adjustment": [],
+                "surcharges": [
+                  {
+                    "code": "Q",
+                    "amount": 29.82,
+                    "currency": "NUC"
+                  }
+                ]
+              },
+              "travelPrice": [
+                {
+                  "travelerQuantity": 1,
+                  "baseFare": {
+                    "money": {
+                      "amount": 3654,
+                      "currency": "CNY"
+                    }
+                  },
+                  "totalFare": {
+                    "money": {
+                      "amount": 6220,
+                      "currency": "CNY"
+                    }
+                  },
+                  "tax": [
+                    {
+                      "code": "DE",
+                      "origin": "FRA",
+                      "destination": "PEK",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 81,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Airport Security Charge (International)"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "OY",
+                      "origin": "FRA",
+                      "destination": "PEK",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 439,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "AIR TRANSPORT TAX (international)"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "RA",
+                      "origin": "FRA",
+                      "destination": "PEK",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 338,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Frankfurt Passenger Service Charge - Intl."
+                        }
+                      ]
+                    }
+                  ],
+                  "fee": [
+                    {
+                      "code": "YQ",
+                      "origin": "FRA",
+                      "destination": "PEK",
+                      "value": {
+                        "money": {
+                          "amount": 111,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "YQ",
+                      "origin": "FRA",
+                      "destination": "PEK",
+                      "value": {
+                        "money": {
+                          "amount": 1397,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    }
+                  ],
+                  "promotion": [],
+                  "adjustment": [],
+                  "travelerTypeRef": {
+                    "uri": "/info/traveler-types/AIR/ADT",
+                    "id": "ADT"
+                  },
+                  "fareAssociation": [
+                    {
+                      "fareBasisCode": "QLNCCDE/NW",
+                      "farePriceRef": {
+                        "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/1",
+                        "id": "1"
+                      }
+                    }
+                  ],
+                  "integralFareInfo": [],
+                  "surcharges": [
+                    {
+                      "code": "Q",
+                      "amount": 29.82,
+                      "currency": "NUC"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "originDestinationRef": {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/origins-destinations/2"
+              },
+              "totalPrice": {
+                "baseFare": {
+                  "money": {
+                    "amount": 3656,
+                    "currency": "CNY"
+                  }
+                },
+                "totalFare": {
+                  "money": {
+                    "amount": 5143,
+                    "currency": "CNY"
+                  }
+                },
+                "tax": [
+                  {
+                    "code": "CN",
+                    "included": false,
+                    "value": {
+                      "money": {
+                        "amount": 90,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Airport Fee (International)"
+                      }
+                    ]
+                  }
+                ],
+                "fee": [
+                  {
+                    "code": "YQ",
+                    "value": {
+                      "money": {
+                        "amount": 1397,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Fuel Surcharge"
+                      }
+                    ]
+                  }
+                ],
+                "promotion": [],
+                "adjustment": [],
+                "surcharges": []
+              },
+              "travelPrice": [
+                {
+                  "travelerQuantity": 1,
+                  "baseFare": {
+                    "money": {
+                      "amount": 3656,
+                      "currency": "CNY"
+                    }
+                  },
+                  "totalFare": {
+                    "money": {
+                      "amount": 5143,
+                      "currency": "CNY"
+                    }
+                  },
+                  "tax": [
+                    {
+                      "code": "CN",
+                      "origin": "PKX",
+                      "destination": "FRA",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 90,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Airport Fee (International)"
+                        }
+                      ]
+                    }
+                  ],
+                  "fee": [
+                    {
+                      "code": "YQ",
+                      "origin": "PKX",
+                      "destination": "FRA",
+                      "value": {
+                        "money": {
+                          "amount": 1397,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    }
+                  ],
+                  "promotion": [],
+                  "adjustment": [],
+                  "travelerTypeRef": {
+                    "uri": "/info/traveler-types/AIR/ADT",
+                    "id": "ADT"
+                  },
+                  "fareAssociation": [
+                    {
+                      "fareBasisCode": "QLNCCDE/NW",
+                      "farePriceRef": {
+                        "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/2",
+                        "id": "2"
+                      }
+                    }
+                  ],
+                  "integralFareInfo": [],
+                  "surcharges": []
+                }
+              ]
+            }
+          ],
+          "farePrice": [
+            {
+              "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/1",
+              "id": "1",
+              "departureDate": "2026-11-25T20:00:00",
+              "code": "QLNCCDE/NW",
+              "tourCode": "HY6EW12",
+              "fareTypeIndicator": "GDS_PRIVATE",
+              "baseFare": {
+                "money": {
+                  "amount": 494.50,
+                  "currency": "EUR"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 6220,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [
+                {
+                  "code": "DE",
+                  "origin": "FRA",
+                  "destination": "PEK",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 81,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Security Charge (International)"
+                    }
+                  ]
+                },
+                {
+                  "code": "OY",
+                  "origin": "FRA",
+                  "destination": "PEK",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 439,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "AIR TRANSPORT TAX (international)"
+                    }
+                  ]
+                },
+                {
+                  "code": "RA",
+                  "origin": "FRA",
+                  "destination": "PEK",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 338,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Frankfurt Passenger Service Charge - Intl."
+                    }
+                  ]
+                }
+              ],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "origin": "FRA",
+                  "destination": "PEK",
+                  "value": {
+                    "money": {
+                      "amount": 111,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                },
+                {
+                  "code": "YQ",
+                  "origin": "FRA",
+                  "destination": "PEK",
+                  "value": {
+                    "money": {
+                      "amount": 1397,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "nucExchange": {
+                "amount": 555.09
+              },
+              "equivFare": {
+                "amount": 3654,
+                "currency": "CNY"
+              },
+              "surcharges": [
+                {
+                  "code": "Q",
+                  "amount": 29.82,
+                  "currency": "NUC"
+                }
+              ],
+              "discount": [],
+              "departureAirportRef": {
+                "uri": "/geo/locations/A/FRA",
+                "id": "A:FRA"
+              },
+              "arrivalAirportRef": {
+                "uri": "/geo/locations/M/BJS",
+                "id": "M:BJS"
+              },
+              "filingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              },
+              "marketingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              },
+              "flightSegmentAssociation": [
+                {
+                  "bookingClass": "Q",
+                  "cabinClass": "Y",
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY",
+                    "id": "STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_932_2026-11-25_FRA_PEK",
+                    "id": "CA_932_2026-11-25_FRA_PEK"
+                  }
+                }
+              ],
+              "travelerAssociation": [
+                {
+                  "travelerCompositionRef": {
+                    "uri": "/traveler-compositions/0",
+                    "id": "0"
+                  }
+                }
+              ],
+              "fareRef": {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fares/1",
+                "id": "1"
+              },
+              "fareRules": {
+                "voluntaryCancel": false,
+                "voluntaryChange": true,
+                "ruleInfo": "Q/NON-END/PENALTY APPLY",
+                "policy": [
+                  {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/policies/QLNCCDE%2FNW",
+                    "code": "QLNCCDE/NW",
+                    "type": "BOOKINGCHANGE",
+                    "description": [],
+                    "change": {
+                      "penalty": {
+                        "amount": 1110,
+                        "currency": "CNY",
+                        "originalAmount": 150.00,
+                        "originalCurrency": "EUR",
+                        "notes": [
+                          {
+                            "name": "departureStatus",
+                            "value": "Anytime"
+                          },
+                          {
+                            "name": "noShow",
+                            "value": "true"
+                          },
+                          {
+                            "name": "decimalPlaces",
+                            "value": "0"
+                          },
+                          {
+                            "name": "decimalPlaces2",
+                            "value": "0"
+                          },
+                          {
+                            "name": "exchangeRate-EUR-CNY",
+                            "value": "7.388366"
+                          }
+                        ]
+                      }
+                    },
+                    "policyGroup": []
+                  }
+                ],
+                "maxStay": {
+                  "rule": [
+                    {
+                      "id": "CAT7_64",
+                      "source": "FARE_RULE",
+                      "endDate": "2027-11-25",
+                      "duration": "P12M"
+                    }
+                  ]
+                },
+                "advanceReservation": [],
+                "baggageAllowance": [
+                  {
+                    "code": "0DF",
+                    "piece": {
+                      "amount": 1
+                    },
+                    "flightSegmentRef": {
+                      "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_932_2026-11-25_FRA_PEK",
+                      "id": "CA_932_2026-11-25_FRA_PEK"
+                    }
+                  }
+                ]
+              },
+              "ATPCOFareData": {
+                "tariff": "901",
+                "ruleNumber": "K381"
+              }
+            },
+            {
+              "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fare-prices/2",
+              "id": "2",
+              "departureDate": "2026-11-28T14:30:00",
+              "code": "QLNCCDE/NW",
+              "tourCode": "HY6EW12",
+              "fareTypeIndicator": "GDS_PRIVATE",
+              "baseFare": {
+                "money": {
+                  "amount": 494.50,
+                  "currency": "EUR"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 5143,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [
+                {
+                  "code": "CN",
+                  "origin": "PKX",
+                  "destination": "FRA",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 90,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Fee (International)"
+                    }
+                  ]
+                }
+              ],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "origin": "PKX",
+                  "destination": "FRA",
+                  "value": {
+                    "money": {
+                      "amount": 1397,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "nucExchange": {
+                "amount": 555.09
+              },
+              "equivFare": {
+                "amount": 3656,
+                "currency": "CNY"
+              },
+              "surcharges": [],
+              "discount": [],
+              "departureAirportRef": {
+                "uri": "/geo/locations/M/BJS",
+                "id": "M:BJS"
+              },
+              "arrivalAirportRef": {
+                "uri": "/geo/locations/A/FRA",
+                "id": "A:FRA"
+              },
+              "filingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              },
+              "marketingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA"
+              },
+              "flightSegmentAssociation": [
+                {
+                  "bookingClass": "Q",
+                  "cabinClass": "Y",
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY",
+                    "id": "STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_957_2026-11-28_PKX_FRA",
+                    "id": "CA_957_2026-11-28_PKX_FRA"
+                  }
+                }
+              ],
+              "travelerAssociation": [
+                {
+                  "travelerCompositionRef": {
+                    "uri": "/traveler-compositions/0",
+                    "id": "0"
+                  }
+                }
+              ],
+              "fareRef": {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itinerary-prices/1/fares/2",
+                "id": "2"
+              },
+              "fareRules": {
+                "voluntaryCancel": false,
+                "voluntaryChange": true,
+                "ruleInfo": "Q/NON-END/PENALTY APPLY",
+                "policy": [
+                  {
+                    "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/policies/QLNCCDE%2FNW",
+                    "code": "QLNCCDE/NW",
+                    "type": "BOOKINGCHANGE",
+                    "description": [],
+                    "change": {
+                      "penalty": {
+                        "amount": 1110,
+                        "currency": "CNY",
+                        "originalAmount": 150.00,
+                        "originalCurrency": "EUR",
+                        "notes": [
+                          {
+                            "name": "departureStatus",
+                            "value": "Anytime"
+                          },
+                          {
+                            "name": "noShow",
+                            "value": "true"
+                          },
+                          {
+                            "name": "decimalPlaces",
+                            "value": "0"
+                          },
+                          {
+                            "name": "decimalPlaces2",
+                            "value": "0"
+                          },
+                          {
+                            "name": "exchangeRate-EUR-CNY",
+                            "value": "7.388366"
+                          }
+                        ]
+                      }
+                    },
+                    "policyGroup": []
+                  }
+                ],
+                "maxStay": {
+                  "rule": [
+                    {
+                      "id": "CAT7_64",
+                      "source": "FARE_RULE",
+                      "endDate": "2027-11-25",
+                      "duration": "P12M"
+                    }
+                  ]
+                },
+                "advanceReservation": [],
+                "baggageAllowance": [
+                  {
+                    "code": "0DF",
+                    "piece": {
+                      "amount": 1
+                    },
+                    "flightSegmentRef": {
+                      "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1/flight-segments/CA_957_2026-11-28_PKX_FRA",
+                      "id": "CA_957_2026-11-28_PKX_FRA"
+                    }
+                  }
+                ]
+              },
+              "ATPCOFareData": {
+                "tariff": "901",
+                "ruleNumber": "K381"
+              }
+            }
+          ],
+          "itineraryRef": {
+            "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/itineraries/1",
+            "id": "1"
+          },
+          "ancillaryRef": [],
+          "miscRef": [],
+          "exchangeRate": [
+            {
+              "fromCurrency": "NUC",
+              "toCurrency": "EUR",
+              "rate": 0.891192
+            }
+          ],
+          "notes": [],
+          "applicableBenefits": []
+        },
+        "fareFamily": [
+          {
+            "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY",
+            "id": "STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY",
+            "code": "STDECO",
+            "name": [
+              {
+                "language": "en",
+                "name": "ECONOMY STANDARD"
+              }
+            ],
+            "combination": [],
+            "benefit": [
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/059",
+                "id": "059",
+                "code": "059",
+                "applyForCharge": true,
+                "providerCode": "ATPCO",
+                "application": "OFFERED_FOR_CHARGE",
+                "displaySequence": 1,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/056",
+                "id": "056",
+                "code": "056",
+                "providerCode": "ATPCO",
+                "application": "DISPLAYED_NOT_OFFERED",
+                "displaySequence": 2,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0CC",
+                "id": "0CC",
+                "code": "0CC",
+                "providerCode": "ATPCO",
+                "application": "OFFERED_FOR_FREE",
+                "displaySequence": 3,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0CD",
+                "id": "0CD",
+                "code": "0CD",
+                "applyForCharge": true,
+                "providerCode": "ATPCO",
+                "application": "OFFERED_FOR_CHARGE",
+                "displaySequence": 4,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0AA",
+                "id": "0AA",
+                "code": "0AA",
+                "applyForCharge": true,
+                "providerCode": "ATPCO",
+                "application": "OFFERED_FOR_CHARGE",
+                "displaySequence": 5,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0DG",
+                "id": "0DG",
+                "code": "0DG",
+                "applyForCharge": true,
+                "providerCode": "ATPCO",
+                "application": "OFFERED_FOR_CHARGE",
+                "displaySequence": 6,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/06Y",
+                "id": "06Y",
+                "code": "06Y",
+                "providerCode": "ATPCO",
+                "application": "NOT_OFFERED",
+                "displaySequence": 7,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/06U",
+                "id": "06U",
+                "code": "06U",
+                "providerCode": "ATPCO",
+                "application": "NOT_OFFERED",
+                "displaySequence": 8,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/06X",
+                "id": "06X",
+                "code": "06X",
+                "providerCode": "ATPCO",
+                "application": "NOT_OFFERED",
+                "displaySequence": 9,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/06W",
+                "id": "06W",
+                "code": "06W",
+                "providerCode": "ATPCO",
+                "application": "NOT_OFFERED",
+                "displaySequence": 10,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0BR",
+                "id": "0BR",
+                "code": "0BR",
+                "providerCode": "ATPCO",
+                "application": "DISPLAYED_NOT_OFFERED",
+                "displaySequence": 11,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/0B5",
+                "id": "0B5",
+                "code": "0B5",
+                "providerCode": "ATPCO",
+                "application": "NOT_OFFERED",
+                "displaySequence": 12,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              },
+              {
+                "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/fare-families/STDECO@@@CFFCA@@@RECORDS8_6006_SUMMARY/benefits/09D",
+                "id": "09D",
+                "code": "09D",
+                "providerCode": "ATPCO",
+                "application": "DISPLAYED_NOT_OFFERED",
+                "displaySequence": 13,
+                "name": [],
+                "content": [],
+                "fareFamilyDescription": []
+              }
+            ]
+          }
+        ],
+        "ancillary": [],
+        "bundleOffer": [],
+        "bundle": []
+      },
+      "travelerComposition": [
+        {
+          "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/air/traveler-compositions/0",
+          "id": "0",
+          "typeRef": {
+            "uri": "/info/traveler-types/AIR/ADT",
+            "id": "ADT"
+          }
+        }
+      ],
+      "assessedPenalty": [],
+      "policy": [
+        {
+          "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/policies/QLNCCDE%2FNW",
+          "code": "QLNCCDE/NW",
+          "type": "BOOKINGCHANGE",
+          "description": [],
+          "change": {
+            "penalty": {
+              "amount": 1110,
+              "currency": "CNY",
+              "originalAmount": 150.00,
+              "originalCurrency": "EUR",
+              "notes": [
+                {
+                  "name": "departureStatus",
+                  "value": "Anytime"
+                },
+                {
+                  "name": "noShow",
+                  "value": "true"
+                },
+                {
+                  "name": "decimalPlaces",
+                  "value": "0"
+                },
+                {
+                  "name": "decimalPlaces2",
+                  "value": "0"
+                },
+                {
+                  "name": "exchangeRate-EUR-CNY",
+                  "value": "7.388366"
+                }
+              ]
+            }
+          },
+          "policyGroup": []
+        },
+        {
+          "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4/policies/QLNCCDE%2FNW",
+          "code": "QLNCCDE/NW",
+          "type": "BOOKINGCHANGE",
+          "description": [],
+          "change": {
+            "penalty": {
+              "amount": 1110,
+              "currency": "CNY",
+              "originalAmount": 150.00,
+              "originalCurrency": "EUR",
+              "notes": [
+                {
+                  "name": "departureStatus",
+                  "value": "Anytime"
+                },
+                {
+                  "name": "noShow",
+                  "value": "true"
+                },
+                {
+                  "name": "decimalPlaces",
+                  "value": "0"
+                },
+                {
+                  "name": "decimalPlaces2",
+                  "value": "0"
+                },
+                {
+                  "name": "exchangeRate-EUR-CNY",
+                  "value": "7.388366"
+                }
+              ]
+            }
+          },
+          "policyGroup": []
+        }
+      ],
+      "fingerprint": "yx6TrVOj0HwdcUaLuM/Z+8ghP0w=",
+      "child": []
+    }
+  ],
+  "offerBundle": [
+    {
+      "uri": "/offer-bundles/1",
+      "id": "1",
+      "totalPrice": {
+        "money": {
+          "amount": 11363,
+          "currency": "CNY"
+        },
+        "redemption": []
+      },
+      "member": [
+        {
+          "offerRef": {
+            "uri": "/core/v3.0/offers/6afa9ac9b8b86c78ea67e0e4",
+            "id": "6afa9ac9b8b86c78ea67e0e4"
+          },
+          "originalOfferRef": {
+            "uri": "/air/search/6afa9a20b8b86c78ea67e0e2/itinerary-prices/1_1",
+            "id": "1_1"
+          },
+          "originalOffer": {
+            "itineraryPriceRef": [
+              {
+                "uri": "/air/search/6afa9a20b8b86c78ea67e0e2/itinerary-prices/1_1",
+                "id": "1_1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "refs": {
+    "pointOfSale": {
+      "uri": "/info/point-of-sales/AIRCHINA_CN",
+      "id": "AIRCHINA_CN",
+      "code": "AIRCHINA_CN",
+      "name": "Air China CN",
+      "type": "Undefined",
+      "address": {
+        "uri": "/info/point-of-sales/AIRCHINA_CN/addresses/1",
+        "id": "1",
+        "addressLine1": "Air China Ltd.",
+        "city": "Beijing",
+        "countryCode": "CN",
+        "default": true,
+        "typeRef": {
+          "uri": "/info/address-types/6.AUT",
+          "id": "6.AUT"
+        }
+      },
+      "phone": {
+        "uri": "/info/point-of-sales/AIRCHINA_CN/phones/1",
+        "id": "1",
+        "number": "1234567",
+        "countryCode": "0086",
+        "areaCode": "10",
+        "default": true,
+        "typeRef": {
+          "uri": "/info/phone-types/5.PUT",
+          "id": "5.PUT"
+        }
+      },
+      "language": {
+        "code": "en",
+        "name": [
+          {
+            "language": "en",
+            "name": "English"
+          }
+        ]
+      },
+      "currency": {
+        "uri": "/info/currencies/CNY",
+        "id": "CNY",
+        "code": "CNY",
+        "symbol": "*",
+        "decimalPlaces": 0,
+        "name": [
+          {
+            "language": "en",
+            "name": "YUAN RENMINBI"
+          }
+        ],
+        "roundingRule": [
+          {
+            "mode": "UP",
+            "roundToNearest": 10,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "BASE_FARE"
+            }
+          },
+          {
+            "mode": "UP",
+            "roundToNearest": 1,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "OTHER_CHARGES"
+            }
+          },
+          {
+            "mode": "UP",
+            "roundToNearest": 1,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "TAX_AMOUNT"
+            }
+          }
+        ]
+      },
+      "parentRef": {
+        "uri": "/info/point-of-sales/AIRCHINA_DOMESTIC_B2C",
+        "id": "AIRCHINA_DOMESTIC_B2C"
+      }
+    },
+    "location": [
+      {
+        "uri": "/geo/locations/A/PKX",
+        "id": "A:PKX",
+        "code": "PKX",
+        "type": "A",
+        "latitude": 0.689405054,
+        "longitude": 2.031563249,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Beijing Daxing International Airport"
+          }
+        ],
+        "alias": [],
+        "parentRef": {
+          "uri": "/geo/locations/M/BJS",
+          "id": "M:BJS"
+        },
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/M/BJS",
+        "id": "M:BJS",
+        "code": "BJS",
+        "type": "M",
+        "latitude": 0.699004,
+        "longitude": 2.034763,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Beijing"
+          }
+        ],
+        "alias": [],
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/A/PEK",
+        "id": "A:PEK",
+        "code": "PEK",
+        "type": "A",
+        "latitude": 0.699529902,
+        "longitude": 2.034784359,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Beijing Capital International Airport"
+          }
+        ],
+        "alias": [],
+        "parentRef": {
+          "uri": "/geo/locations/M/BJS",
+          "id": "M:BJS"
+        },
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/A/FRA",
+        "id": "A:FRA",
+        "code": "FRA",
+        "type": "A",
+        "latitude": 0.873125759,
+        "longitude": 0.14910566,
+        "timeZone": "Europe/Berlin",
+        "name": [
+          {
+            "language": "en",
+            "name": "Frankfurt International Airport"
+          }
+        ],
+        "alias": [],
+        "countryRef": {
+          "uri": "/geo/countries/DE",
+          "id": "DE"
+        }
+      }
+    ],
+    "airline": [
+      {
+        "uri": "/info/air/airlines/CA",
+        "id": "CA",
+        "code": "CA",
+        "name": "Air China"
+      }
+    ],
+    "travelerType": [
+      {
+        "uri": "/info/traveler-types/AIR/ADT",
+        "id": "ADT",
+        "code": "ADT",
+        "qualified": false,
+        "groupRef": {
+          "uri": "/info/traveler-groups/ADULT",
+          "id": "ADULT"
+        },
+        "ageRange": {
+          "from": 12,
+          "to": 110,
+          "default": 35
+        },
+        "agePromt": "DISABLE_PROMPT",
+        "description": [
+          {
+            "language": "en",
+            "name": "ADT",
+            "shortDescription": "Adult 12+",
+            "longDescription": "Adult Aged 12-110"
+          }
+        ],
+        "quantity": {
+          "min": 0,
+          "max": 9,
+          "default": 1
+        }
+      }
+    ],
+    "region": [],
+    "productSubGroup": [],
+    "productGroup": [],
+    "product": [],
+    "country": [],
+    "provider": []
+  }
+}

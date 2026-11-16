@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
-import { cities } from '../mock/city'
-import { getLowestPrice } from '../mock/price'
+import { cities } from '../constants/airports'
+import { useLowestPrices } from '../composables/useLowestPrices'
 
 const props = defineProps({
   depCity: {
@@ -20,6 +20,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['select'])
+
+const { priceFor, isLoading, loadPrices } = useLowestPrices()
 
 const WEEKDAYS = ['一', '二', '三', '四', '五', '六', '日']
 const WINDOW_DAYS = 14
@@ -92,6 +94,7 @@ const cells = computed(() =>
     const disabled = date < today
     const month = date.getMonth() + 1
     const day = date.getDate()
+    const fetched = disabled ? null : priceFor(props.depCity, props.arrCity, key)
 
     return {
       key,
@@ -101,10 +104,24 @@ const cells = computed(() =>
       shortLabel: `${month}/${day}`,
       label: `${month}月${day}日`,
       disabled,
-      price: disabled ? null : getLowestPrice(props.depCity, props.arrCity, date),
+      price: fetched === undefined ? null : fetched,
+      loading: !disabled && isLoading(props.depCity, props.arrCity, key),
       selected: props.selectedDate === key,
     }
   }),
+)
+
+// 按需拉取 14 天窗口的最低价
+watch(
+  () => `${props.depCity}-${props.arrCity}-${cells.value.map((cell) => cell.key).join(',')}`,
+  () => {
+    loadPrices(
+      props.depCity,
+      props.arrCity,
+      cells.value.filter((cell) => !cell.disabled).map((cell) => cell.key),
+    )
+  },
+  { immediate: true },
 )
 
 const lowestPrice = computed(() => {
@@ -120,10 +137,15 @@ const routeHasPrices = computed(() => cells.value.some((cell) => cell.price !== 
 const selectedInfo = computed(() => {
   const selected = parseDate(props.selectedDate)
   if (!selected) return null
+  const fetched = priceFor(
+    props.depCity,
+    props.arrCity,
+    formatDate(selected),
+  )
 
   return {
     label: `${selected.getMonth() + 1}月${selected.getDate()}日`,
-    price: getLowestPrice(props.depCity, props.arrCity, selected),
+    price: fetched === undefined ? null : fetched,
   }
 })
 
@@ -200,7 +222,7 @@ function pick(cell) {
         >
           <span class="text-[10px] leading-none opacity-60">{{ cell.shortLabel }}</span>
           <span class="text-[13px] font-semibold leading-none">
-            {{ cell.price === null ? '—' : `¥${cell.price}` }}
+            {{ cell.loading ? '…' : cell.price === null ? '—' : `¥${cell.price}` }}
           </span>
           <span
             class="h-[10px] text-[9px] leading-none"

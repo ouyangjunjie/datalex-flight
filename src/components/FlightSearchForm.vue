@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ArrowDown, Calendar, CirclePlus, Flag, Location, Search, Switch, User } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import { cities } from '../mock/city'
+import { cities } from '../constants/airports'
 import { searchQuery } from '../composables/useSearchQuery'
 
 const emit = defineEmits(['search'])

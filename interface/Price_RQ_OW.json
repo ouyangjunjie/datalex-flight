@@ -1,0 +1,12 @@
+{
+  "itineraryPriceRQ": {
+    "itineraryPriceRef": [
+      {
+        "uri": "/air/search/6afa97f8b8b86c78ea67e0d7/itinerary-prices/1_1"
+      }
+    ],
+    "pricingMode": "VERIFY"
+  },
+  "languageCode":"en",
+  "userSessionId":"{{userSessionId}}"
+}

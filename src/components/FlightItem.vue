@@ -2,7 +2,10 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 import FlightDetailDialog from './FlightDetailDialog.vue'
+import { verifyFare } from '../composables/useFlightStore'
+import { CABIN_ORDER } from '../constants/fare'
 
 const props = defineProps({
   flight: {
@@ -13,41 +16,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  leg: {
-    type: String,
-    default: 'outbound',
-  },
 })
 
-const emit = defineEmits(['select'])
-
-const CABINS = ['头等舱', '公务舱', '超级经济舱', '经济舱']
-
-const aircraftCodes = {
-  '空客A330-300': '33A',
-  '空客A350-900': '359',
-  '波音737-800': '738',
-  '空客A321': '321',
-  '空客A330-200': '332',
-  '波音777-300ER': '77W',
-  '空客A320neo': '32N',
-  '空客A321neo': '32Q',
-}
-
-const terminalCodes = {
-  PEK: 'T3',
-  PVG: 'T2',
-  SHA: 'T2',
-  CAN: 'T1',
-  SZX: 'T3',
-  CTU: 'T2',
-  CKG: 'T3',
-  HGH: 'T4',
-  XIY: 'T3',
-  KMG: 'T1',
-  WUH: 'T3',
-  NKG: 'T2',
-}
+const CABINS = CABIN_ORDER
 
 const cabinStyles = {
   头等舱: { cell: 'bg-amber-50/70 hover:bg-amber-100/70' },
@@ -56,65 +27,42 @@ const cabinStyles = {
   经济舱: { cell: 'bg-slate-50/80 hover:bg-slate-100' },
 }
 
-const fareLetters = {
-  头等舱: ['F', 'A'],
-  公务舱: ['R', 'J'],
-  超级经济舱: ['W', 'G'],
-  经济舱: ['B', 'Y'],
-}
-
-const fareMileage = {
-  头等舱: '300%',
-  公务舱: '300%',
-  超级经济舱: '110%',
-  经济舱: '100%',
-}
-
-const fareFullMultiplier = {
-  头等舱: 1.6,
-  公务舱: 3.7,
-  超级经济舱: 2.2,
-  经济舱: 2.4,
-}
-
 const detailVisible = ref(false)
 const expandedCabin = ref(null)
+const bookingKey = ref('')
 const router = useRouter()
 
-const depAirport = computed(() => parseAirport(props.flight.depAirport))
-const arrAirport = computed(() => parseAirport(props.flight.arrAirport))
-const depTerminal = computed(() => terminalCodes[depAirport.value.code] || '')
-const arrTerminal = computed(() => terminalCodes[arrAirport.value.code] || '')
+const returnLeg = computed(() => props.flight.legs?.[1] || null)
 const shortAircraft = computed(
-  () => aircraftCodes[props.flight.aircraft] || props.flight.aircraft || '—',
+  () => props.flight.aircraftCode || props.flight.aircraft || '—',
 )
 const availableCabins = computed(() =>
-  CABINS.filter((cabin) => priceFor(cabin) !== null),
+  CABINS.filter((cabin) => cabinItem(cabin) !== null),
 )
 
-const bookLabel = computed(() =>
-  props.roundtrip && props.leg === 'outbound' ? '选为去程' : '预订',
-)
-
-function parseAirport(value) {
-  const match = /^(.+?)\(([A-Z0-9]+)\)$/.exec(value || '')
-  return match ? { name: match[1], code: match[2] } : { name: value || '', code: '' }
+function cabinItem(cabin) {
+  return props.flight.priceList?.find((item) => item.cabin === cabin) || null
 }
 
 function priceFor(cabin) {
-  return props.flight.priceList.find((item) => item.cabin === cabin)?.price ?? null
+  return cabinItem(cabin)?.price ?? null
 }
 
 function seatsLeft(cabin) {
-  const seed = [...`${props.flight.flightNo}${cabin}`].reduce(
-    (sum, char) => sum + char.charCodeAt(0),
-    0,
-  )
-  return (seed % 8) + 2
+  const seats = (cabinItem(cabin)?.fares || [])
+    .map((fare) => fare.seats)
+    .filter((value) => Number.isFinite(value) && value > 0)
+  return seats.length ? Math.min(...seats) : null
 }
 
 function cellClass(cabin) {
   return cabinStyles[cabin]?.cell || 'bg-slate-50 hover:bg-slate-100'
+}
+
+function stopsLabel(target) {
+  if ((target?.segments?.length || 0) > 1) return '中转'
+  if ((target?.segments?.[0]?.stopQuantity || 0) > 0) return '经停'
+  return '直飞'
 }
 
 function toggleExpand(cabin) {
@@ -123,58 +71,28 @@ function toggleExpand(cabin) {
 }
 
 function fareOptions(cabin) {
-  const item = props.flight.priceList.find((entry) => entry.cabin === cabin)
-  if (!item) return []
-
-  const label = cabin.replace(/舱$/, '')
-  const letters = fareLetters[cabin] || ['Y', 'B']
-  const mileage = fareMileage[cabin] || '100%'
-  const discountRefund = item.refundRule.includes('免费') ? '0%起' : '20%起'
-  const fullPrice = Math.round((item.price * (fareFullMultiplier[cabin] || 2)) / 10) * 10
-
-  return [
-    {
-      name: `${label}折扣(${letters[0]}舱)`,
-      price: item.price,
-      refund: discountRefund,
-      baggage: item.baggage,
-      mileage,
-      seats: seatsLeft(cabin),
-    },
-    {
-      name: `${label}(${letters[1]}舱)`,
-      price: fullPrice,
-      refund: '0%起',
-      baggage: item.baggage,
-      mileage,
-      seats: seatsLeft(cabin) + 1,
-    },
-  ]
+  return cabinItem(cabin)?.fares || []
 }
 
 const expandedFares = computed(() =>
   expandedCabin.value ? fareOptions(expandedCabin.value) : [],
 )
 
-function onBook(fare) {
-  if (props.roundtrip && props.leg === 'outbound') {
-    emit('select', {
-      flight: props.flight,
-      cabin: expandedCabin.value || '',
-      fare,
-    })
-    return
-  }
+function isBooking(fare) {
+  return bookingKey.value === fare.itineraryPriceId
+}
 
-  router.push({
-    name: 'booking-info',
-    query: {
-      flightNo: props.flight.flightNo,
-      cabin: expandedCabin.value || '',
-      fare: fare.name,
-      price: String(fare.price),
-    },
-  })
+async function onBook(fare) {
+  if (bookingKey.value) return
+  bookingKey.value = fare.itineraryPriceId
+  try {
+    await verifyFare(props.flight, fare)
+    router.push({ name: 'booking-info' })
+  } catch (error) {
+    ElMessage.error(error?.message || '验价失败，请稍后重试')
+  } finally {
+    bookingKey.value = ''
+  }
 }
 </script>
 
@@ -190,30 +108,34 @@ function onBook(fare) {
           />
         </svg>
         <div class="min-w-0 leading-tight">
-          <div class="text-[15px] font-semibold text-ca-navy">{{ flight.flightNo }}</div>
+          <div class="whitespace-nowrap text-[15px] font-semibold text-ca-navy">
+            {{ flight.flightNo }}
+          </div>
           <div class="mt-1 text-[11px] text-gray-400">{{ shortAircraft }}</div>
+          <div v-if="returnLeg" class="mt-0.5 whitespace-nowrap text-[10px] text-gray-400">
+            返 {{ returnLeg.flightNo }}
+          </div>
         </div>
       </div>
 
       <div class="flex flex-col items-center justify-center border-r border-gray-100 px-3 py-3">
-        <span
-          class="text-[26px] font-semibold leading-none tracking-tight text-ca-navy"
-        >
+        <span class="text-[26px] font-semibold leading-none tracking-tight text-ca-navy">
           {{ flight.depTime }}
         </span>
         <span class="mt-1.5 whitespace-nowrap text-xs text-gray-400">
-          {{ depAirport.code }} {{ depTerminal }}
+          {{ flight.depCode }} {{ flight.depTerminal }}
         </span>
       </div>
 
       <div class="flex flex-col items-center justify-center border-r border-gray-100 px-3 py-3">
-        <span
-          class="text-[26px] font-semibold leading-none tracking-tight text-ca-navy"
-        >
+        <span class="text-[26px] font-semibold leading-none tracking-tight text-ca-navy">
           {{ flight.arrTime }}
+          <span v-if="flight.arrTimeSuffix" class="align-top text-[11px] text-ca-red">
+            {{ flight.arrTimeSuffix }}
+          </span>
         </span>
         <span class="mt-1.5 whitespace-nowrap text-xs text-gray-400">
-          {{ arrAirport.code }} {{ arrTerminal }}
+          {{ flight.arrCode }} {{ flight.arrTerminal }}
         </span>
       </div>
 
@@ -222,7 +144,7 @@ function onBook(fare) {
           v-if="!flight.isDirect"
           class="mb-1 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] leading-none text-gray-500"
         >
-          经停
+          {{ stopsLabel(flight) }}
         </span>
         <div
           class="flex items-center gap-4 whitespace-nowrap border-b border-gray-300 pb-0.5 text-[11px] text-gray-500"
@@ -261,6 +183,7 @@ function onBook(fare) {
                 ¥{{ priceFor(cabin) }}<span class="ml-0.5 text-xs font-normal text-gray-500">起</span>
               </span>
               <span
+                v-if="seatsLeft(cabin) !== null"
                 class="absolute -right-3 -top-5 flex h-6 w-6 items-center justify-center"
                 :aria-label="`剩余 ${seatsLeft(cabin)} 张`"
               >
@@ -306,35 +229,29 @@ function onBook(fare) {
         <div>
           <div
             v-for="fare in expandedFares"
-            :key="fare.name"
+            :key="fare.itineraryPriceId"
             class="flex flex-wrap items-center gap-x-12 gap-y-4 border-b border-gray-100 py-5 last:border-b-0"
           >
             <div class="min-w-[160px] text-[17px] font-semibold text-ca-navy">
-              {{ fare.name }}
+              {{ expandedCabin }} · {{ fare.name }}
             </div>
 
             <div class="text-center">
               <div class="text-xs text-gray-400">退改费</div>
-              <div
-                class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700"
-              >
-                {{ fare.refund }}
+              <div class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700">
+                {{ fare.refundLabel }}
               </div>
             </div>
             <div class="text-center">
               <div class="text-xs text-gray-400">行李额</div>
-              <div
-                class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700"
-              >
-                {{ fare.baggage }}
+              <div class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700">
+                {{ fare.baggage || '—' }}
               </div>
             </div>
             <div class="text-center">
               <div class="text-xs text-gray-400">里程累积</div>
-              <div
-                class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700"
-              >
-                {{ fare.mileage }}
+              <div class="mt-1 border-b border-dotted border-gray-300 pb-0.5 text-[17px] text-gray-700">
+                {{ fare.mileage || '—' }}
               </div>
             </div>
 
@@ -343,11 +260,12 @@ function onBook(fare) {
               <el-button
                 type="primary"
                 class="!h-11 min-w-[120px] !rounded-lg !text-base"
+                :loading="isBooking(fare)"
                 @click="onBook(fare)"
               >
-                {{ bookLabel }}
+                预订
               </el-button>
-              <span class="text-sm text-gray-400">剩余{{ fare.seats }}张</span>
+              <span v-if="fare.seats" class="text-sm text-gray-400">剩余{{ fare.seats }}张</span>
             </div>
           </div>
         </div>
@@ -365,16 +283,21 @@ function onBook(fare) {
             />
           </svg>
           <div class="min-w-0 leading-tight">
-            <div class="text-[15px] font-semibold text-ca-navy">{{ flight.flightNo }}</div>
-            <div class="mt-0.5 text-[11px] text-gray-400">{{ shortAircraft }}</div>
+            <div class="whitespace-nowrap text-[15px] font-semibold text-ca-navy">
+              {{ flight.flightNo }}
+            </div>
+            <div class="mt-0.5 text-[11px] text-gray-400">
+              {{ shortAircraft }}
+              <span v-if="returnLeg">· 返 {{ returnLeg.flightNo }}</span>
+            </div>
           </div>
         </div>
 
         <span
-          v-if="!flight.isDirect"
+          v-if="roundtrip || !flight.isDirect"
           class="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] leading-none text-gray-500"
         >
-          经停
+          {{ roundtrip ? '往返' : stopsLabel(flight) }}
         </span>
       </div>
 
@@ -384,14 +307,12 @@ function onBook(fare) {
             {{ flight.depTime }}
           </div>
           <div class="mt-1.5 text-xs text-gray-400">
-            {{ depAirport.code }} {{ depTerminal }}
+            {{ flight.depCode }} {{ flight.depTerminal }}
           </div>
         </div>
 
         <div class="flex flex-col items-center text-[11px] text-gray-400">
-          <div
-            class="flex items-center gap-1.5 whitespace-nowrap border-b border-gray-300 pb-0.5"
-          >
+          <div class="flex items-center gap-1.5 whitespace-nowrap border-b border-gray-300 pb-0.5">
             <span>{{ flight.duration }}</span>
             <button
               type="button"
@@ -406,25 +327,63 @@ function onBook(fare) {
         <div class="text-right">
           <div class="text-[26px] font-semibold leading-none tracking-tight text-ca-navy">
             {{ flight.arrTime }}
+            <span v-if="flight.arrTimeSuffix" class="align-top text-[11px] text-ca-red">
+              {{ flight.arrTimeSuffix }}
+            </span>
           </div>
           <div class="mt-1.5 text-xs text-gray-400">
-            {{ arrAirport.code }} {{ arrTerminal }}
+            {{ flight.arrCode }} {{ flight.arrTerminal }}
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-3 gap-2 px-4 pb-4">
-        <div
+        <button
           v-for="cabin in availableCabins"
           :key="cabin"
-          class="relative rounded-md border border-transparent p-2.5 text-left transition"
-          :class="cellClass(cabin)"
+          type="button"
+          class="plain-button relative rounded-md border p-2.5 text-left transition"
+          :class="[
+            cellClass(cabin),
+            expandedCabin === cabin ? 'border-ca-navy' : 'border-transparent',
+          ]"
+          :aria-expanded="expandedCabin === cabin"
+          @click="toggleExpand(cabin)"
         >
           <span class="text-[11px] text-gray-500">{{ cabin }}</span>
           <span v-if="roundtrip" class="mt-0.5 block text-[10px] text-gray-400">往返总价</span>
           <span class="mt-1 block whitespace-nowrap text-base font-semibold text-ca-navy">
             ¥{{ priceFor(cabin) }}<span class="text-[10px] font-normal text-gray-500">起</span>
           </span>
+        </button>
+      </div>
+
+      <div v-if="expandedCabin" class="border-t border-gray-100 px-4 py-3">
+        <div
+          v-for="fare in expandedFares"
+          :key="fare.itineraryPriceId"
+          class="space-y-2 border-b border-gray-100 py-3 last:border-b-0"
+        >
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-medium text-ca-navy">
+              {{ expandedCabin }} · {{ fare.name }}
+            </span>
+            <span class="text-base font-semibold text-ca-navy">¥{{ fare.price }}</span>
+          </div>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+            <span>退改 {{ fare.refundLabel }}</span>
+            <span>行李 {{ fare.baggage || '—' }}</span>
+            <span>里程 {{ fare.mileage || '—' }}</span>
+            <span v-if="fare.seats">剩余 {{ fare.seats }} 张</span>
+          </div>
+          <el-button
+            type="primary"
+            class="!h-9 w-full !rounded-lg"
+            :loading="isBooking(fare)"
+            @click="onBook(fare)"
+          >
+            预订
+          </el-button>
         </div>
       </div>
     </div>

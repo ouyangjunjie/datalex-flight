@@ -2,9 +2,12 @@
 
 ## Project
 
-Static front-end demo of a 爱达航 (DATALEX) style flight search & results page.
-Vue 3 + Vite + Element Plus + TailwindCSS. All data is mocked in-repo; there is
-**no backend, API client, env file, or auth** — do not add network calls.
+Front-end demo of a 爱达航 (DATALEX) style flight search & results page.
+Vue 3 + Vite + Element Plus + TailwindCSS. Flight and fare data come from a
+local REST service (`/tdprest-2/api/air/search` and `/price`) proxied by Vite;
+there is no auth and no other backend. Request/response samples live in
+`interface/` (`RQ` = request, `RS` = response, `OW` = one-way, `HRT` = half
+round trip).
 
 ## Commands
 
@@ -21,20 +24,35 @@ they pass; verify with `npm run build`.
 
 - `src/router/index.js` — HTML5 history; `/` and unknown paths redirect to
   `/flight-search`; views are lazy-loaded.
-- `src/views/` — route-level pages (`FlightSearch`). It switches between the
-  search view (`FlightSearchForm` + `PriceCalendar`) and the results view
-  (progress steps, route summary, notices, date strip, fare table) based on
-  whether a search query is set.
+- `src/views/` — route-level pages. `FlightSearch` switches between the search
+  view (`FlightSearchForm` + `PriceCalendar`) and the results view (progress
+  steps, route summary, notices, date strip, fare table) based on whether a
+  search query is set. `BookingInfo` renders the verified booking draft and
+  redirects back to `/flight-search` when the draft is missing.
 - `src/utils/date.js` — date parsing/formatting helpers shared by the results
   date strip and route summary.
-- `src/mock/flight.js` — 10 CA flights; fields are `flightNo`, `aircraft`,
-  `depAirport`, `arrAirport`, `depTime`, `arrTime`, `duration`, `priceList`,
-  `isDirect`.
-- `src/mock/city.js` — domestic city/airport options (`code`, `name`, `airport`).
-- `src/mock/policy.js` — per-cabin baggage + refund/change policy used by the
-  detail dialog.
-- `src/mock/price.js` — `getLowestPrice(depCity, arrCity, date)`; deterministic
-  per-route/per-date economy fare for the price calendar and results date strip.
+- `src/api/client.js` — axios instance (`baseURL` defaults to
+  `/tdprest-2/api/air`, override with `VITE_API_BASE_URL`); forces
+  `Accept: application/json` because the service otherwise returns XML; wraps
+  failures in `ApiError`.
+- `src/api/flight.js` — `searchAir` / `priceAir`. Search 404
+  `NO_FLIGHTS_FOUND` is treated as an empty result.
+- `src/api/mappers.js` — builds search (`ONE_WAY` / `HALF_ROUND_TRIP`) and price
+  requests (`VERIFY` one-way, `VALIDATE` round trip) and maps responses into the
+  UI model (legs, segments, cabins, fares, baggage, refund rules, price
+  breakdown).
+- `src/composables/useFlightStore.js` — global search state (`runSearch`), fare
+  verification (`verifyFare`), and the `sessionStorage` booking draft consumed by
+  `BookingInfo`.
+- `src/composables/useLowestPrices.js` — per-date lowest fare lookups for the
+  price calendar / results date strip (cache, serial fetch, paused during a
+  primary search so the local service is not overloaded).
+- `src/constants/airports.js` — city/airport options and Chinese airport labels.
+- `src/constants/fare.js` — cabin order, cabin-class mapping, static baggage /
+  mileage service standards.
+- `src/constants/notices.js` — static booking notice copy.
+- `vite.config.js` — proxies `/tdprest-2` to `http://127.0.0.1:9090` for both
+  `server` and `preview`.
 - `src/composables/useSearchQuery.js` — shared reactive search state used by both
   `FlightSearchForm.vue` and `PriceCalendar.vue`.
 - `src/components/` — `Header.vue` (global nav), `Footer.vue` (global footer),
@@ -74,3 +92,13 @@ they pass; verify with `npm run build`.
 - UI copy is Chinese; keep new user-facing text in Chinese for consistency.
 - Tailwind v3 is installed intentionally (config-based, `tailwind.config.js`).
   Do not upgrade to v4 without migrating the PostCSS/config setup.
+- **The query service must be running** at `http://127.0.0.1:9090` for search,
+  price verification, calendar, and date-strip fares. There is no mock fallback.
+  If it is down, pages show the request error and an empty result.
+- Requests must send `Accept: application/json` (already set in
+  `src/api/client.js`); without it the service responds with XML.
+- Round trips use one search request with two `originDestination` legs
+  (`HALF_ROUND_TRIP`); each result row is a combined itinerary and its fares are
+  combined 往返 totals. Do not reintroduce separate outbound/return steps.
+- Leftover unused mock modules must not be imported; all flight data now comes
+  from `src/api/`.

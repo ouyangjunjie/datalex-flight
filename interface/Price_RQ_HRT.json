@@ -1,0 +1,12 @@
+{
+  "itineraryPriceRQ": {
+    "itineraryPriceRef": [
+      {
+        "uri": "{{outboundItineraryPriceRef}}"
+      }
+    ],
+    "pricingMode": "VALIDATE"
+  },
+  "languageCode":"en",
+  "userSessionId":"{{userSessionId}}"
+}

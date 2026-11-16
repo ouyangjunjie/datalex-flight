@@ -1,69 +1,46 @@
 {
-"originDestination": [
-{
-"origin": {
-"date": "2026-11-25",
-"locationRef": {
-"uri": "/geo/locations/A/FRA"
-}
-},
-"destination": {
-"locationRef": {
-"uri": "/geo/locations/A/PEK"
-}
-}
-},
-{
-"origin": {
-"date": "2026-11-28",
-"locationRef": {
-"uri": "/geo/locations/A/PKX"
-}
-},
-"destination": {
-"locationRef": {
-"uri": "/geo/locations/A/FRA"
-}
-}
-}
-],
-"pos": "AIRCHINA_CN",
-"preferredCurrency": "CNY",
-"languageCode": "en",
-"travelerComposition": [
-{
-"count": 1,
-"age": "29",
-"typeRef": {
-"uri": "/info/traveler-types/AIR/ADT"
-}
-},
-{
-"count": 0,
-"age": "12",
-"typeRef": {
-"uri": "/info/traveler-types/AIR/ADT"
-}
-},
-{
-"count": 0,
-"age": "11",
-"typeRef": {
-"uri": "/info/traveler-types/AIR/CNN"
-}
-},
-{
-"count": 0,
-"age": "1",
-"typeRef": {
-"uri": "/info/traveler-types/AIR/INF"
-}
-}
-],
-"travelPreferences": {
-"searchType": "HALF_ROUND_TRIP",
-"flight": {
-"flexibleDates": "FALSE"
-}
-}
+  "pos": "AIRCHINA_CN",
+  "preferredCurrency": "CNY",
+  "languageCode": "en",
+  "originDestination": [
+    {
+      "origin": {
+        "date": "2026-11-28",
+        "locationRef": {
+          "uri": "/geo/locations/A/PEK"
+        }
+      },
+      "destination": {
+        "locationRef": {
+          "uri": "/geo/locations/A/TFU"
+        }
+      }
+    }
+  ],
+  "travelerComposition": [
+    {
+      "count": 1,
+      "typeRef": {
+        "uri": "/info/traveler-types/AIR/ADT"
+      }
+    },
+    {
+      "count": 1,
+      "typeRef": {
+        "uri": "/info/traveler-types/AIR/CNN"
+      }
+    },
+    {
+      "count": 0,
+      "typeRef": {
+        "uri": "/info/traveler-types/AIR/INF"
+      }
+    }
+  ],
+  "travelPreferences": {
+    "searchType": "ONE_WAY",
+    "flight": {
+      "flexibleDates": "FALSE"
+    }
+  }
 }

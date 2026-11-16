@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { ArrowLeft, ArrowRight, Calendar } from '@element-plus/icons-vue'
-import { getLowestPrice } from '../mock/price'
+import { useLowestPrices } from '../composables/useLowestPrices'
 import {
   addDays,
   formatDate,
@@ -35,6 +35,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['select'])
+
+const { priceFor, isLoading, loadPrices } = useLowestPrices()
 
 const today = startOfToday()
 const moreVisible = ref(false)
@@ -77,13 +79,16 @@ const days = computed(() => {
   const list = Array.from({ length: 7 }, (_, index) => {
     const date = addDays(start.value, index)
     const returnDate = addDays(date, offsetDays.value)
+    const key = formatDate(date)
+    const fetched = priceFor(props.depCity, props.arrCity, key)
     return {
-      key: formatDate(date),
+      key,
       label: formatMonthDay(date),
       weekday: weekdayLabel(date),
       returnLabel: formatMonthDay(returnDate),
       returnWeekday: weekdayLabel(returnDate),
-      price: getLowestPrice(props.depCity, props.arrCity, date),
+      price: fetched === undefined ? null : fetched,
+      loading: isLoading(props.depCity, props.arrCity, key),
     }
   })
 
@@ -95,6 +100,19 @@ const days = computed(() => {
     lowest: day.price !== null && day.price === lowest,
   }))
 })
+
+// 日期窗口/航线变化时按需拉取最低价（接口结果按航线+日期缓存）
+watch(
+  () => `${props.depCity}-${props.arrCity}-${days.value.map((day) => day.key).join(',')}`,
+  () => {
+    loadPrices(
+      props.depCity,
+      props.arrCity,
+      days.value.map((day) => day.key),
+    )
+  },
+  { immediate: true },
+)
 
 function shiftWindow(offset) {
   const next = addDays(start.value, offset)
@@ -174,7 +192,7 @@ function disablePast(date) {
                   : 'text-ca-navy'
             "
           >
-            ¥{{ day.price === null ? '—' : day.price }}
+            ¥{{ day.loading ? '…' : day.price === null ? '—' : day.price }}
           </span>
         </span>
 

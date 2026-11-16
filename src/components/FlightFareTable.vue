@@ -12,13 +12,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  leg: {
-    type: String,
-    default: 'outbound',
-  },
 })
-
-const emit = defineEmits(['select'])
 
 const CABINS = ['头等舱', '公务舱', '超级经济舱', '经济舱']
 
@@ -68,7 +62,7 @@ const rows = computed(() => {
   let list = props.flights.filter((flight) => !directOnly.value || flight.isDirect)
 
   if (carrierOnly.value) {
-    list = list.filter((flight) => flight.flightNo.startsWith('CA'))
+    list = list.filter((flight) => flight.isAirChinaOperated)
   }
 
   if (sortKey.value) {
@@ -174,11 +168,9 @@ const rows = computed(() => {
     <template v-if="rows.length">
       <FlightItem
         v-for="flight in rows"
-        :key="flight.flightNo"
+        :key="flight.key"
         :flight="flight"
         :roundtrip="roundtrip"
-        :leg="leg"
-        @select="$emit('select', $event)"
       />
     </template>
 

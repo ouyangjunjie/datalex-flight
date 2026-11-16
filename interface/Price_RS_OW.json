@@ -1,0 +1,1522 @@
+{
+  "userSessionId": "6afa97d1b8b86c78ea67e0d6",
+  "pos": "AIRCHINA_CN",
+  "languageCode": "en",
+  "clientToken": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzOTczMzI5LjE3OTQ4MDc3NjEyNTgiLCJpYXQiOjE3OTQ4MDc4NDAsImV4cCI6MTc5NDgwODc0MH0.7hlP-FzP1Q9Li-PnHz_kvMxiasJh2n6sXXWpYNJTSgc",
+  "preferredCurrency": "CNY",
+  "expiration": {
+    "date": "2026-11-16T06:08:54Z",
+    "duration": "PT24M53.844S"
+  },
+  "error": [],
+  "warning": [],
+  "totalPrice": {
+    "money": {
+      "amount": 1430,
+      "currency": "CNY"
+    },
+    "redemption": []
+  },
+  "offer": [
+    {
+      "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de",
+      "id": "6afa981fb8b86c78ea67e0de",
+      "domain": "AIR",
+      "price": {
+        "baseFare": {
+          "money": {
+            "amount": 1000,
+            "currency": "CNY"
+          }
+        },
+        "totalFare": {
+          "money": {
+            "amount": 1430,
+            "currency": "CNY"
+          }
+        },
+        "tax": [
+          {
+            "code": "CN",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 100,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Airport Fee (Domestic)"
+              }
+            ]
+          }
+        ],
+        "fee": [
+          {
+            "code": "YQ",
+            "included": false,
+            "value": {
+              "money": {
+                "amount": 330,
+                "currency": "CNY"
+              }
+            },
+            "description": [
+              {
+                "language": "en",
+                "name": "Fuel Surcharge"
+              }
+            ]
+          }
+        ],
+        "promotion": [],
+        "adjustment": [],
+        "payNowValue": {
+          "money": {
+            "amount": 1430,
+            "currency": "CNY"
+          }
+        }
+      },
+      "air": {
+        "itinerary": {
+          "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1",
+          "id": "1",
+          "duration": "PT4H40M",
+          "originDestination": [
+            {
+              "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/origins-destinations/1",
+              "id": "1",
+              "duration": "PT4H40M",
+              "arrivalOffset": 0,
+              "totalYFare": 3610,
+              "totalYFareCurrency": "CNY",
+              "flightSegment": [
+                {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_1605_2026-11-28_PEK_DLC",
+                  "id": "CA_1605_2026-11-28_PEK_DLC",
+                  "flightNumber": "1605",
+                  "stopQuantity": 0,
+                  "duration": "PT1H15M",
+                  "layover": "PT9H5M",
+                  "mealService": false,
+                  "fullYFare": 1480,
+                  "fullYFareCurrency": "CNY",
+                  "departure": {
+                    "date": "2026-11-28T09:40:00",
+                    "terminal": "T3",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/PEK",
+                      "id": "A:PEK",
+                      "index": 1
+                    }
+                  },
+                  "arrival": {
+                    "date": "2026-11-28T10:55:00",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/DLC",
+                      "id": "A:DLC",
+                      "index": 0
+                    }
+                  },
+                  "marketingAirlineRef": {
+                    "uri": "/info/air/airlines/CA",
+                    "id": "CA",
+                    "index": 0
+                  },
+                  "aircraft": {
+                    "code": "738",
+                    "name": "Boeing 737_800",
+                    "changeOfGauge": false
+                  },
+                  "bookingClassAvailability": [
+                    {
+                      "bookingClass": "T",
+                      "cabinClass": "Y",
+                      "inventoryQuantity": 3
+                    }
+                  ],
+                  "amenityRef": [],
+                  "comment": [],
+                  "flightLeg": [],
+                  "specialService": []
+                },
+                {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_8927_2026-11-28_DLC_TFU",
+                  "id": "CA_8927_2026-11-28_DLC_TFU",
+                  "flightNumber": "8927",
+                  "stopQuantity": 0,
+                  "duration": "PT3H25M",
+                  "mealService": false,
+                  "fullYFare": 2130,
+                  "fullYFareCurrency": "CNY",
+                  "departure": {
+                    "date": "2026-11-28T20:00:00",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/DLC",
+                      "id": "A:DLC",
+                      "index": 0
+                    }
+                  },
+                  "arrival": {
+                    "date": "2026-11-28T23:25:00",
+                    "terminal": "T2",
+                    "airportRef": {
+                      "uri": "/geo/locations/A/TFU",
+                      "id": "A:TFU",
+                      "index": 3
+                    }
+                  },
+                  "marketingAirlineRef": {
+                    "uri": "/info/air/airlines/CA",
+                    "id": "CA",
+                    "index": 0
+                  },
+                  "aircraft": {
+                    "code": "73D",
+                    "name": "73D",
+                    "changeOfGauge": false
+                  },
+                  "bookingClassAvailability": [
+                    {
+                      "bookingClass": "T",
+                      "cabinClass": "Y",
+                      "inventoryQuantity": 3
+                    }
+                  ],
+                  "amenityRef": [],
+                  "comment": [],
+                  "flightLeg": [],
+                  "specialService": []
+                }
+              ],
+              "notes": [],
+              "vendorAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA",
+                "index": 0
+              }
+            }
+          ]
+        },
+        "itineraryPrice": {
+          "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1",
+          "id": "1",
+          "totalPrice": {
+            "baseFare": {
+              "money": {
+                "amount": 1000,
+                "currency": "CNY"
+              }
+            },
+            "totalFare": {
+              "money": {
+                "amount": 1430,
+                "currency": "CNY"
+              }
+            },
+            "tax": [
+              {
+                "code": "CN",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Airport Fee (Domestic)"
+                  }
+                ]
+              }
+            ],
+            "fee": [
+              {
+                "code": "YQ",
+                "included": false,
+                "value": {
+                  "money": {
+                    "amount": 330,
+                    "currency": "CNY"
+                  }
+                },
+                "description": [
+                  {
+                    "language": "en",
+                    "name": "Fuel Surcharge"
+                  }
+                ]
+              }
+            ],
+            "promotion": [],
+            "adjustment": []
+          },
+          "travelerPrice": [
+            {
+              "travelerQuantity": 1,
+              "linearFareConstruction": "PEK CA X/DLC CA TFU 500.00T/CA1C263288 CNY500.00END",
+              "baseFare": {
+                "money": {
+                  "amount": 500,
+                  "currency": "CNY"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 820,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [
+                {
+                  "code": "CN",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 100,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Fee (Domestic)"
+                    }
+                  ]
+                }
+              ],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 220,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "travelerTypeRef": {
+                "uri": "/info/traveler-types/AIR/ADT",
+                "id": "ADT",
+                "index": 0
+              },
+              "fareAssociation": [
+                {
+                  "fareBasisCode": "T/CA1C263288",
+                  "farePriceRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/1",
+                    "id": "1",
+                    "index": 0
+                  }
+                }
+              ],
+              "integralFareInfo": [
+                {
+                  "singleFareIndicator": "OW_INTEGRAL_FARE",
+                  "fareInfoRef": [
+                    {
+                      "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/1",
+                      "id": "1",
+                      "index": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "travelerQuantity": 1,
+              "linearFareConstruction": "PEK CA X/DLC CA TFU 500.00T/CA1C263288 CNY500.00END",
+              "baseFare": {
+                "money": {
+                  "amount": 500,
+                  "currency": "CNY"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 610,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 110,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "travelerTypeRef": {
+                "uri": "/info/traveler-types/AIR/CNN",
+                "id": "CNN",
+                "index": 1
+              },
+              "fareAssociation": [
+                {
+                  "fareBasisCode": "T/CA1C263288",
+                  "farePriceRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/2",
+                    "id": "2",
+                    "index": 1
+                  }
+                }
+              ],
+              "integralFareInfo": [
+                {
+                  "singleFareIndicator": "OW_INTEGRAL_FARE",
+                  "fareInfoRef": [
+                    {
+                      "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/2",
+                      "id": "2",
+                      "index": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "originDestinationPrice": [
+            {
+              "originDestinationRef": {
+                "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/origins-destinations/1"
+              },
+              "totalPrice": {
+                "baseFare": {
+                  "money": {
+                    "amount": 1000,
+                    "currency": "CNY"
+                  }
+                },
+                "totalFare": {
+                  "money": {
+                    "amount": 1430,
+                    "currency": "CNY"
+                  }
+                },
+                "tax": [
+                  {
+                    "code": "CN",
+                    "included": false,
+                    "value": {
+                      "money": {
+                        "amount": 100,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Airport Fee (Domestic)"
+                      }
+                    ]
+                  }
+                ],
+                "fee": [
+                  {
+                    "code": "YQ",
+                    "value": {
+                      "money": {
+                        "amount": 330,
+                        "currency": "CNY"
+                      }
+                    },
+                    "description": [
+                      {
+                        "language": "en",
+                        "name": "Fuel Surcharge"
+                      }
+                    ]
+                  }
+                ],
+                "promotion": [],
+                "adjustment": [],
+                "surcharges": []
+              },
+              "travelPrice": [
+                {
+                  "travelerQuantity": 1,
+                  "baseFare": {
+                    "money": {
+                      "amount": 500,
+                      "currency": "CNY"
+                    }
+                  },
+                  "totalFare": {
+                    "money": {
+                      "amount": 820,
+                      "currency": "CNY"
+                    }
+                  },
+                  "tax": [
+                    {
+                      "code": "CN",
+                      "origin": "PEK",
+                      "destination": "DLC",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 50,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Airport Fee (Domestic)"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "CN",
+                      "origin": "DLC",
+                      "destination": "TFU",
+                      "included": false,
+                      "value": {
+                        "money": {
+                          "amount": 50,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Airport Fee (Domestic)"
+                        }
+                      ]
+                    }
+                  ],
+                  "fee": [
+                    {
+                      "code": "YQ",
+                      "origin": "PEK",
+                      "destination": "DLC",
+                      "value": {
+                        "money": {
+                          "amount": 80,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "YQ",
+                      "origin": "DLC",
+                      "destination": "TFU",
+                      "value": {
+                        "money": {
+                          "amount": 140,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    }
+                  ],
+                  "promotion": [],
+                  "adjustment": [],
+                  "travelerTypeRef": {
+                    "uri": "/info/traveler-types/AIR/ADT",
+                    "id": "ADT",
+                    "index": 0
+                  },
+                  "fareAssociation": [
+                    {
+                      "fareBasisCode": "T/CA1C263288",
+                      "farePriceRef": {
+                        "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/1",
+                        "id": "1"
+                      }
+                    }
+                  ],
+                  "integralFareInfo": [],
+                  "surcharges": []
+                },
+                {
+                  "travelerQuantity": 1,
+                  "baseFare": {
+                    "money": {
+                      "amount": 500,
+                      "currency": "CNY"
+                    }
+                  },
+                  "totalFare": {
+                    "money": {
+                      "amount": 610,
+                      "currency": "CNY"
+                    }
+                  },
+                  "tax": [],
+                  "fee": [
+                    {
+                      "code": "YQ",
+                      "origin": "PEK",
+                      "destination": "DLC",
+                      "value": {
+                        "money": {
+                          "amount": 40,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "YQ",
+                      "origin": "DLC",
+                      "destination": "TFU",
+                      "value": {
+                        "money": {
+                          "amount": 70,
+                          "currency": "CNY"
+                        }
+                      },
+                      "description": [
+                        {
+                          "language": "en",
+                          "name": "Fuel Surcharge"
+                        }
+                      ]
+                    }
+                  ],
+                  "promotion": [],
+                  "adjustment": [],
+                  "travelerTypeRef": {
+                    "uri": "/info/traveler-types/AIR/CNN",
+                    "id": "CNN",
+                    "index": 1
+                  },
+                  "fareAssociation": [
+                    {
+                      "fareBasisCode": "T/CA1C263288",
+                      "farePriceRef": {
+                        "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/2",
+                        "id": "2"
+                      }
+                    }
+                  ],
+                  "integralFareInfo": [],
+                  "surcharges": []
+                }
+              ]
+            }
+          ],
+          "farePrice": [
+            {
+              "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/1",
+              "id": "1",
+              "departureDate": "2026-11-28T09:40:00",
+              "code": "T/CA1C263288",
+              "fareTypeIndicator": "GDS_PUBLISHED",
+              "baseFare": {
+                "money": {
+                  "amount": 500,
+                  "currency": "CNY"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 820,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [
+                {
+                  "code": "CN",
+                  "origin": "PEK",
+                  "destination": "DLC",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 50,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Fee (Domestic)"
+                    }
+                  ]
+                },
+                {
+                  "code": "CN",
+                  "origin": "DLC",
+                  "destination": "TFU",
+                  "included": false,
+                  "value": {
+                    "money": {
+                      "amount": 50,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Airport Fee (Domestic)"
+                    }
+                  ]
+                }
+              ],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "origin": "PEK",
+                  "destination": "DLC",
+                  "value": {
+                    "money": {
+                      "amount": 80,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                },
+                {
+                  "code": "YQ",
+                  "origin": "DLC",
+                  "destination": "TFU",
+                  "value": {
+                    "money": {
+                      "amount": 140,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "surcharges": [],
+              "discount": [],
+              "departureAirportRef": {
+                "uri": "/geo/locations/A/PEK",
+                "id": "A:PEK",
+                "index": 1
+              },
+              "arrivalAirportRef": {
+                "uri": "/geo/locations/A/TFU",
+                "id": "A:TFU",
+                "index": 3
+              },
+              "filingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA",
+                "index": 0
+              },
+              "marketingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA",
+                "index": 0
+              },
+              "flightSegmentAssociation": [
+                {
+                  "bookingClass": "T",
+                  "cabinClass": "Y",
+                  "inventoryQuantity": 3,
+                  "inventoryAlert": true,
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+                    "id": "DE5"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_1605_2026-11-28_PEK_DLC",
+                    "id": "CA_1605_2026-11-28_PEK_DLC",
+                    "index": 0
+                  }
+                },
+                {
+                  "bookingClass": "T",
+                  "cabinClass": "Y",
+                  "inventoryQuantity": 3,
+                  "inventoryAlert": true,
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+                    "id": "DE5"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_8927_2026-11-28_DLC_TFU",
+                    "id": "CA_8927_2026-11-28_DLC_TFU",
+                    "index": 1
+                  }
+                }
+              ],
+              "travelerAssociation": [
+                {
+                  "travelerCompositionRef": {
+                    "uri": "/traveler-compositions/0",
+                    "id": "0"
+                  }
+                }
+              ],
+              "fareRef": {
+                "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fares/1",
+                "id": "1"
+              },
+              "fareRules": {
+                "voluntaryChange": false,
+                "ruleInfo": "Q/不得签转/改退收费",
+                "policy": [],
+                "maxStay": {
+                  "applicationCondition": "AND",
+                  "rule": [
+                    {
+                      "id": "MIN_MAX_STAY_20261109092754_5038",
+                      "source": "FARE_ROUTE_ENTRY",
+                      "duration": "P1D",
+                      "origin": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/PEK",
+                          "id": "A:PEK",
+                          "index": 1
+                        }
+                      },
+                      "destination": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/DLC",
+                          "id": "A:DLC",
+                          "index": 0
+                        }
+                      }
+                    },
+                    {
+                      "id": "MIN_MAX_STAY_20261109092754_5039",
+                      "source": "FARE_ROUTE_ENTRY",
+                      "duration": "P14D",
+                      "origin": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/DLC",
+                          "id": "A:DLC",
+                          "index": 0
+                        }
+                      },
+                      "destination": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/TFU",
+                          "id": "A:TFU",
+                          "index": 3
+                        }
+                      }
+                    }
+                  ]
+                },
+                "advanceReservation": [],
+                "baggageAllowance": []
+              },
+              "ATPCOFareData": {
+                "tariff": "T",
+                "ruleNumber": "260812121700B"
+              },
+              "ACDCFareData": {
+                "ACDCIndex": "F26101918083R5",
+                "ACDCRuleNumber": "260812121700B"
+              }
+            },
+            {
+              "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fare-prices/2",
+              "id": "2",
+              "departureDate": "2026-11-28T09:40:00",
+              "code": "T/CA1C263288",
+              "fareTypeIndicator": "GDS_PUBLISHED",
+              "baseFare": {
+                "money": {
+                  "amount": 500,
+                  "currency": "CNY"
+                }
+              },
+              "totalFare": {
+                "money": {
+                  "amount": 610,
+                  "currency": "CNY"
+                }
+              },
+              "tax": [],
+              "fee": [
+                {
+                  "code": "YQ",
+                  "origin": "PEK",
+                  "destination": "DLC",
+                  "value": {
+                    "money": {
+                      "amount": 40,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                },
+                {
+                  "code": "YQ",
+                  "origin": "DLC",
+                  "destination": "TFU",
+                  "value": {
+                    "money": {
+                      "amount": 70,
+                      "currency": "CNY"
+                    }
+                  },
+                  "description": [
+                    {
+                      "language": "en",
+                      "name": "Fuel Surcharge"
+                    }
+                  ]
+                }
+              ],
+              "promotion": [],
+              "adjustment": [],
+              "surcharges": [],
+              "discount": [],
+              "departureAirportRef": {
+                "uri": "/geo/locations/A/PEK",
+                "id": "A:PEK",
+                "index": 1
+              },
+              "arrivalAirportRef": {
+                "uri": "/geo/locations/A/TFU",
+                "id": "A:TFU",
+                "index": 3
+              },
+              "filingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA",
+                "index": 0
+              },
+              "marketingAirlineRef": {
+                "uri": "/info/air/airlines/CA",
+                "id": "CA",
+                "index": 0
+              },
+              "flightSegmentAssociation": [
+                {
+                  "bookingClass": "T",
+                  "cabinClass": "Y",
+                  "inventoryQuantity": 3,
+                  "inventoryAlert": true,
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+                    "id": "DE5"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_1605_2026-11-28_PEK_DLC",
+                    "id": "CA_1605_2026-11-28_PEK_DLC",
+                    "index": 0
+                  }
+                },
+                {
+                  "bookingClass": "T",
+                  "cabinClass": "Y",
+                  "inventoryQuantity": 3,
+                  "inventoryAlert": true,
+                  "fareFamilyRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+                    "id": "DE5"
+                  },
+                  "flightSegmentRef": {
+                    "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1/flight-segments/CA_8927_2026-11-28_DLC_TFU",
+                    "id": "CA_8927_2026-11-28_DLC_TFU",
+                    "index": 1
+                  }
+                }
+              ],
+              "travelerAssociation": [
+                {
+                  "travelerCompositionRef": {
+                    "uri": "/traveler-compositions/1",
+                    "id": "1"
+                  }
+                }
+              ],
+              "fareRef": {
+                "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itinerary-prices/1/fares/2",
+                "id": "2"
+              },
+              "fareRules": {
+                "voluntaryChange": false,
+                "ruleInfo": "Q/不得签转/改退收费",
+                "policy": [],
+                "maxStay": {
+                  "applicationCondition": "AND",
+                  "rule": [
+                    {
+                      "id": "MIN_MAX_STAY_20261109092754_5038",
+                      "source": "FARE_ROUTE_ENTRY",
+                      "duration": "P1D",
+                      "origin": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/PEK",
+                          "id": "A:PEK",
+                          "index": 1
+                        }
+                      },
+                      "destination": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/DLC",
+                          "id": "A:DLC",
+                          "index": 0
+                        }
+                      }
+                    },
+                    {
+                      "id": "MIN_MAX_STAY_20261109092754_5039",
+                      "source": "FARE_ROUTE_ENTRY",
+                      "duration": "P14D",
+                      "origin": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/DLC",
+                          "id": "A:DLC",
+                          "index": 0
+                        }
+                      },
+                      "destination": {
+                        "locationRef": {
+                          "uri": "/geo/locations/A/TFU",
+                          "id": "A:TFU",
+                          "index": 3
+                        }
+                      }
+                    }
+                  ]
+                },
+                "advanceReservation": [],
+                "baggageAllowance": []
+              },
+              "ATPCOFareData": {
+                "tariff": "T",
+                "ruleNumber": "260812121700B"
+              },
+              "ACDCFareData": {
+                "ACDCIndex": "F26101918083R5",
+                "ACDCRuleNumber": "260812121700B"
+              }
+            }
+          ],
+          "itineraryRef": {
+            "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/itineraries/1",
+            "id": "1"
+          },
+          "ancillaryRef": [],
+          "miscRef": [],
+          "exchangeRate": [],
+          "notes": [],
+          "applicableBenefits": []
+        },
+        "fareFamily": [
+          {
+            "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+            "id": "DE5",
+            "code": "DE5",
+            "name": [
+              {
+                "language": "en",
+                "name": "Economy Supersaver"
+              },
+              {
+                "language": "zh_CN",
+                "name": "超值特价"
+              },
+              {
+                "language": "zh_HK",
+                "name": "超值特價"
+              }
+            ],
+            "combination": [
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DF1",
+                  "id": "DF1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DF2",
+                  "id": "DF2"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DB1",
+                  "id": "DB1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DB2",
+                  "id": "DB2"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DP1",
+                  "id": "DP1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DP2",
+                  "id": "DP2"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE1",
+                  "id": "DE1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE2",
+                  "id": "DE2"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE3",
+                  "id": "DE3"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE4",
+                  "id": "DE4"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DEA1",
+                  "id": "DEA1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DPA1",
+                  "id": "DPA1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DFA1",
+                  "id": "DFA1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DBA1",
+                  "id": "DBA1"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/E_DF",
+                  "id": "E_DF"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/E_DB",
+                  "id": "E_DB"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/E_DP",
+                  "id": "E_DP"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/E_DE",
+                  "id": "E_DE"
+                }
+              },
+              {
+                "fareFamilyRef": {
+                  "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/fare-families/DE5",
+                  "id": "DE5"
+                }
+              }
+            ],
+            "benefit": []
+          }
+        ],
+        "ancillary": [],
+        "bundleOffer": [],
+        "bundle": []
+      },
+      "travelerComposition": [
+        {
+          "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/traveler-compositions/0",
+          "id": "0",
+          "typeRef": {
+            "uri": "/info/traveler-types/AIR/ADT",
+            "id": "ADT",
+            "index": 0
+          }
+        },
+        {
+          "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de/air/traveler-compositions/1",
+          "id": "1",
+          "typeRef": {
+            "uri": "/info/traveler-types/AIR/CNN",
+            "id": "CNN",
+            "index": 1
+          }
+        }
+      ],
+      "assessedPenalty": [],
+      "policy": [],
+      "child": []
+    }
+  ],
+  "offerBundle": [
+    {
+      "uri": "/offer-bundles/0",
+      "id": "0",
+      "totalPrice": {
+        "money": {
+          "amount": 1430,
+          "currency": "CNY"
+        },
+        "redemption": []
+      },
+      "member": [
+        {
+          "offerRef": {
+            "uri": "/core/v3.0/offers/6afa981fb8b86c78ea67e0de",
+            "id": "6afa981fb8b86c78ea67e0de"
+          }
+        }
+      ]
+    }
+  ],
+  "refs": {
+    "pointOfSale": {
+      "uri": "/info/point-of-sales/AIRCHINA_CN",
+      "id": "AIRCHINA_CN",
+      "code": "AIRCHINA_CN",
+      "name": "Air China CN",
+      "type": "Undefined",
+      "address": {
+        "uri": "/info/point-of-sales/AIRCHINA_CN/addresses/1",
+        "id": "1",
+        "addressLine1": "Air China Ltd.",
+        "city": "Beijing",
+        "countryCode": "CN",
+        "default": true,
+        "typeRef": {
+          "uri": "/info/address-types/6.AUT",
+          "id": "6.AUT"
+        }
+      },
+      "phone": {
+        "uri": "/info/point-of-sales/AIRCHINA_CN/phones/1",
+        "id": "1",
+        "number": "1234567",
+        "countryCode": "0086",
+        "areaCode": "10",
+        "default": true,
+        "typeRef": {
+          "uri": "/info/phone-types/5.PUT",
+          "id": "5.PUT"
+        }
+      },
+      "language": {
+        "code": "en",
+        "name": [
+          {
+            "language": "en",
+            "name": "English"
+          }
+        ]
+      },
+      "currency": {
+        "uri": "/info/currencies/CNY",
+        "id": "CNY",
+        "code": "CNY",
+        "symbol": "*",
+        "decimalPlaces": 0,
+        "name": [
+          {
+            "language": "en",
+            "name": "YUAN RENMINBI"
+          }
+        ],
+        "roundingRule": [
+          {
+            "mode": "UP",
+            "roundToNearest": 10,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "BASE_FARE"
+            }
+          },
+          {
+            "mode": "UP",
+            "roundToNearest": 1,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "OTHER_CHARGES"
+            }
+          },
+          {
+            "mode": "UP",
+            "roundToNearest": 1,
+            "provider": {
+              "code": "IATA"
+            },
+            "application": {
+              "code": "TAX_AMOUNT"
+            }
+          }
+        ]
+      },
+      "parentRef": {
+        "uri": "/info/point-of-sales/AIRCHINA_DOMESTIC_B2C",
+        "id": "AIRCHINA_DOMESTIC_B2C"
+      }
+    },
+    "location": [
+      {
+        "uri": "/geo/locations/A/DLC",
+        "id": "A:DLC",
+        "code": "DLC",
+        "type": "A",
+        "latitude": 0.680079184,
+        "longitude": 2.121248738,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Dalian Zhoushuizi Airport"
+          }
+        ],
+        "alias": [],
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/A/PEK",
+        "id": "A:PEK",
+        "code": "PEK",
+        "type": "A",
+        "latitude": 0.699529902,
+        "longitude": 2.034784359,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Beijing Capital International Airport"
+          }
+        ],
+        "alias": [],
+        "parentRef": {
+          "uri": "/geo/locations/M/BJS",
+          "id": "M:BJS",
+          "index": 2
+        },
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/M/BJS",
+        "id": "M:BJS",
+        "code": "BJS",
+        "type": "M",
+        "latitude": 0.699004,
+        "longitude": 2.034763,
+        "timeZone": "Asia/Shanghai",
+        "name": [
+          {
+            "language": "en",
+            "name": "Beijing"
+          }
+        ],
+        "alias": [],
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/A/TFU",
+        "id": "A:TFU",
+        "code": "TFU",
+        "type": "A",
+        "latitude": 0.528863852,
+        "longitude": 1.822429172,
+        "timeZone": "Asia/Chongqing",
+        "name": [
+          {
+            "language": "en",
+            "name": "Chengdu Tianfu International Airport"
+          }
+        ],
+        "alias": [],
+        "parentRef": {
+          "uri": "/geo/locations/M/CTU",
+          "id": "M:CTU",
+          "index": 4
+        },
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      },
+      {
+        "uri": "/geo/locations/M/CTU",
+        "id": "M:CTU",
+        "code": "CTU",
+        "type": "M",
+        "latitude": 0.533695994,
+        "longitude": 1.814218899,
+        "timeZone": "Asia/Chongqing",
+        "name": [
+          {
+            "language": "en",
+            "name": "Chengdu"
+          }
+        ],
+        "alias": [],
+        "countryRef": {
+          "uri": "/geo/countries/CN",
+          "id": "CN"
+        }
+      }
+    ],
+    "airline": [
+      {
+        "uri": "/info/air/airlines/CA",
+        "id": "CA",
+        "code": "CA",
+        "name": "Air China"
+      }
+    ],
+    "travelerType": [
+      {
+        "uri": "/info/traveler-types/AIR/ADT",
+        "id": "ADT",
+        "code": "ADT",
+        "qualified": false,
+        "groupRef": {
+          "uri": "/info/traveler-groups/ADULT",
+          "id": "ADULT"
+        },
+        "ageRange": {
+          "from": 12,
+          "to": 110,
+          "default": 35
+        },
+        "agePromt": "DISABLE_PROMPT",
+        "description": [
+          {
+            "language": "en",
+            "name": "ADT",
+            "shortDescription": "Adult 12+",
+            "longDescription": "Adult Aged 12-110"
+          }
+        ],
+        "quantity": {
+          "min": 0,
+          "max": 9,
+          "default": 1
+        }
+      },
+      {
+        "uri": "/info/traveler-types/AIR/CNN",
+        "id": "CNN",
+        "code": "CNN",
+        "qualified": false,
+        "groupRef": {
+          "uri": "/info/traveler-groups/CHILD",
+          "id": "CHILD"
+        },
+        "ageRange": {
+          "from": 2,
+          "to": 11,
+          "default": 6
+        },
+        "agePromt": "DISABLE_PROMPT",
+        "description": [
+          {
+            "language": "en",
+            "name": "CNN",
+            "shortDescription": "Child 2+",
+            "longDescription": "Child Aged 2-11"
+          }
+        ],
+        "quantity": {
+          "min": 0,
+          "max": 9,
+          "default": 0
+        }
+      }
+    ],
+    "region": [],
+    "productSubGroup": [],
+    "productGroup": [],
+    "product": [],
+    "country": [],
+    "provider": []
+  }
+}
