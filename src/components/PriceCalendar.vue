@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
-import { cities } from '../constants/airports'
+import { cityName } from '../constants/airports'
 import { useLowestPrices } from '../composables/useLowestPrices'
 
 const props = defineProps({
@@ -55,10 +55,6 @@ function parseDate(value) {
   if (!value) return null
   const [year, month, day] = value.split('-').map(Number)
   return new Date(year, month - 1, day)
-}
-
-function cityName(code) {
-  return cities.find((city) => city.code === code)?.name || code
 }
 
 const today = startOfToday()

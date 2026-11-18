@@ -59,7 +59,7 @@ function arrivalDate(segment) {
               </el-tag>
             </div>
             <div class="mt-1 text-xs text-gray-500">
-              爱达航 · {{ flight.aircraft || '机型待定' }}
+              国航 · {{ flight.aircraft || '机型待定' }}
             </div>
           </div>
           <div v-if="legs.length > 1" class="text-xs text-gray-500">

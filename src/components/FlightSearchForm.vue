@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
-import { ArrowDown, Calendar, CirclePlus, Flag, Location, Search, Switch, User } from '@element-plus/icons-vue'
+import { ArrowDown, Calendar, CirclePlus, Flag, Search, Switch, User } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import { cities } from '../constants/airports'
+import AirportPicker from './AirportPicker.vue'
 import { searchQuery } from '../composables/useSearchQuery'
 
 const emit = defineEmits(['search'])
@@ -129,29 +129,11 @@ function onSubmit() {
 
     <div class="flex flex-col gap-3 lg:flex-row">
       <div class="field-box flex items-center gap-2 px-4 py-2.5 lg:min-w-0 lg:flex-1">
-        <div class="min-w-0 flex-1">
-          <div class="flex items-center gap-1 text-xs text-gray-400">
-            <el-icon :size="13"><Location /></el-icon>
-            出发机场
-          </div>
-          <el-select
-            v-model="form.depCity"
-            class="airport-select w-full"
-            placeholder="请选择出发机场"
-          >
-            <el-option
-              v-for="city in cities"
-              :key="city.code"
-              :label="`${city.name}${city.airport} ${city.code}`"
-              :value="city.code"
-            >
-              <div class="flex items-center justify-between gap-6">
-                <span>{{ city.name }}（{{ city.code }}）</span>
-                <span class="text-xs text-gray-400">{{ city.airport }}</span>
-              </div>
-            </el-option>
-          </el-select>
-        </div>
+        <AirportPicker
+          v-model="form.depCity"
+          label="出发机场"
+          initial-region="domestic"
+        />
 
         <button
           type="button"
@@ -162,29 +144,11 @@ function onSubmit() {
           <el-icon :size="16"><Switch /></el-icon>
         </button>
 
-        <div class="min-w-0 flex-1">
-          <div class="flex items-center gap-1 text-xs text-gray-400">
-            <el-icon :size="13"><Location /></el-icon>
-            到达机场
-          </div>
-          <el-select
-            v-model="form.arrCity"
-            class="airport-select w-full"
-            placeholder="请选择到达机场"
-          >
-            <el-option
-              v-for="city in cities"
-              :key="city.code"
-              :label="`${city.name}${city.airport} ${city.code}`"
-              :value="city.code"
-            >
-              <div class="flex items-center justify-between gap-6">
-                <span>{{ city.name }}（{{ city.code }}）</span>
-                <span class="text-xs text-gray-400">{{ city.airport }}</span>
-              </div>
-            </el-option>
-          </el-select>
-        </div>
+        <AirportPicker
+          v-model="form.arrCity"
+          label="到达机场"
+          initial-region="domestic"
+        />
       </div>
 
       <div class="field-box flex items-center gap-3 px-4 py-2.5 lg:w-[calc(33.333%+30px)] lg:shrink-0">
@@ -340,23 +304,6 @@ function onSubmit() {
 .field-box:hover,
 .field-box:focus-within {
   border-color: #c7000b;
-}
-
-.airport-select :deep(.el-select__wrapper) {
-  min-height: 26px;
-  padding: 0;
-  background: transparent;
-  box-shadow: none !important;
-}
-
-.airport-select :deep(.el-select__selected-item),
-.airport-select :deep(.el-select__placeholder) {
-  font-size: 18px;
-  color: #1f2937;
-}
-
-.airport-select :deep(.el-select__suffix) {
-  display: none;
 }
 
 .date-picker :deep(.el-input__wrapper) {

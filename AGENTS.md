@@ -47,7 +47,9 @@ they pass; verify with `npm run build`.
 - `src/composables/useLowestPrices.js` — per-date lowest fare lookups for the
   price calendar / results date strip (cache, serial fetch, paused during a
   primary search so the local service is not overloaded).
-- `src/constants/airports.js` — city/airport options and Chinese airport labels.
+- `src/constants/airportData.js` — 289 个 IATA 机场三字码（国内 133 / 国际及港澳台 156）。
+- `src/constants/airports.js` — 机场静态字典与辅助函数（中文名、城市、热门标记、
+  分组、三字码/中文/拼音搜索）。
 - `src/constants/fare.js` — cabin order, cabin-class mapping, static baggage /
   mileage service standards.
 - `src/constants/notices.js` — static booking notice copy.
@@ -57,6 +59,8 @@ they pass; verify with `npm run build`.
   `FlightSearchForm.vue` and `PriceCalendar.vue`.
 - `src/components/` — `Header.vue` (global nav), `Footer.vue` (global footer),
   `FlightSearchForm.vue` (emits `search` with trip/date/passenger/cabin params),
+  `AirportPicker.vue` (domestic/international tabs, pinyin alphabet groups,
+  search by Chinese name / pinyin / IATA code),
   `PriceCalendar.vue` (two-week lowest-fare grid, emits `select`),
   `BookingSteps.vue` (static purchase progress), `NoticeBar.vue` (expandable
   notice), `ResultsDateStrip.vue` (7-day fare strip, emits `select`),

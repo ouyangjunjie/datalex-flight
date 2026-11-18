@@ -7,7 +7,8 @@
 ## 功能
 
 - 顶部爱达航风格导航、语言切换、登录/注册入口（仅 UI）
-- 机票查询：单程/往返、国内城市、出发/返程日期、成人/儿童数量、舱位
+- 机票查询：单程/往返、国内外 289 个机场（含港澳台）、出发/返程日期、成人/儿童数量、舱位
+- 机场选择：国内 / 国际及港澳台地区分区，热门城市与拼音字母分组，支持中文名、拼音、机场全名或三字码搜索，出发/到达可一键互换
 - 表单校验：起降城市不能相同、日期不能早于今天、返程不早于去程
 - 价格日历：按航线展示未来两周每日经济舱最低价，点击日期同步日期并查询
 - 查询结果页：购票进度、航线摘要、提示条、日期低价条、筛选与舱位价格表
@@ -75,12 +76,14 @@ src/
 │   ├── useFlightStore.js   # 查询状态、验价与预订草稿
 │   └── useLowestPrices.js  # 日历/日期条的每日最低价查询
 ├── constants/
-│   ├── airports.js         # 城市/机场字典与中文名称
+│   ├── airports.js         # 机场查询辅助（分组/搜索/中文名称）
+│   ├── airportData.js      # 289 个国内外机场三字码与中文名称
 │   ├── fare.js             # 舱位顺序、舱位映射、行李服务标准
 │   └── notices.js          # 预订须知文案
 ├── components/
 │   ├── Header.vue          # 顶部导航
 │   ├── Footer.vue          # 页脚
+│   ├── AirportPicker.vue   # 出发/到达机场下拉面板
 │   ├── FlightSearchForm.vue# 查询表单，emit search
 │   ├── PriceCalendar.vue   # 未来两周每日最低价日历
 │   ├── BookingSteps.vue    # 购票进度条
@@ -98,6 +101,8 @@ src/
 - 验价：`POST /tdprest-2/api/air/price`
 - 请求/响应样例位于 `interface/`：`RQ` 为请求、`RS` 为响应、`OW` 为单程、`HRT` 为往返。
 - 请求必须携带 `Accept: application/json`，否则服务返回 XML。
+- 出发/到达机场下拉框的数据来自 `src/constants/airportData.js`（纯静态字典），
+  查询时只把选中的 IATA 三字码传给接口。
 
 查询行为：
 

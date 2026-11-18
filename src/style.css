@@ -36,3 +36,9 @@ body {
   background-color: #f5f7fa;
   color: #303133;
 }
+
+/* 机场选择面板用完整宽度的自定义内容，去掉 el-popover 默认内边距 */
+.airport-picker-popper.el-popper {
+  max-width: calc(100vw - 24px);
+  padding: 0;
+}

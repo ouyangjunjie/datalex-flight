@@ -69,7 +69,7 @@ export function buildSearchRequest(params = {}) {
     ],
     travelPreferences: {
       searchType: isRoundTrip ? 'HALF_ROUND_TRIP' : 'ONE_WAY',
-      flight: { flexibleDates: 'FALSE' },
+      flight: { flexibleDates: 'TRUE' },
     },
   }
 }
